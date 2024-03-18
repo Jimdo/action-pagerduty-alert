@@ -35,6 +35,7 @@ try {
         related_commits: context.payload.commits
           ? context.payload.commits.map((commit) => `${commit.message}: ${commit.url}`).join(', ')
           : 'No related commits',
+        runbook: core.getInput('runbook-url'),
       },
     },
     routing_key: integrationKey,
